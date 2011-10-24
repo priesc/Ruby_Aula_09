@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<b>Caixa:</b> <%= @conformidade.caixa %> </br>
+<b>Processo:</b> <%= @conformidade.processo %> </br>
+<b>Data:</b> <%= localize @conformidade.data %> </br>
+<b>Valor:</b> <%= number_to_currency @conformidade.valor %> </br>
+<b>Fornecedor:</b> <%= @conformidade.fornecedor.nome %> </br>
+<b>Observação:</b> <%= @conformidade.observacao %> </br></br>
+
+<% if usuario_signed_in? %>
+<%= link_to 'Editar', edit_conformidade_path(@conformidade) %> |
+<% end %>
+<%= link_to 'Volta', conformidades_path %>
